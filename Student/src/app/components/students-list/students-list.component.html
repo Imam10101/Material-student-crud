@@ -1,0 +1,40 @@
+<div class="list row p-5">
+    <div class="col-md-12">
+        <h4>Student List</h4>
+        <div class="example-button-container">
+            <button mat-mini-fab color="primary" (click)="openDialog()"
+            aria-label="Example icon button with a plus one icon">
+              <mat-icon>plus_one</mat-icon>
+            </button>
+          </div>
+        <table class="table table-danger">
+            <thead>
+                <tr>
+                    <th>Id</th>
+                    <th>Student Name</th>
+                    <th>Course Name</th>
+                    <th>Student Id</th>
+                    <th>Batch Id</th>
+                    <th>Round</th>
+                    <th>Action</th>
+                </tr>
+            </thead>
+            <tbody>
+                @for(student of students; track student.id){
+                    <tr>
+                        <td>{{student.id}}</td>
+                        <td>{{student.studentName}}</td>
+                        <td>{{student.courseName}}</td>
+                        <td>{{student.studentId}}</td>
+                        <td>{{student.batchId}}</td>
+                        <td>{{student.round}}</td>
+                        <td>
+                            <button routerLink="/students/{{student.id}}" class="btn btn-primary ">Details</button> |
+                            <button (click)="deletestudent(student.id)"  class="btn btn-warning">Delete</button>
+                        </td>
+                    </tr>
+                }
+            </tbody>
+        </table>
+    </div>
+</div>

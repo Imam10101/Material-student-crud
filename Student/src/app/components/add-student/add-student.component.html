@@ -1,0 +1,42 @@
+<h2 mat-dialog-title>Enter Student Info</h2>
+<form (ngSubmit)="savestudent()">
+  <mat-dialog-content>
+    <mat-form-field>
+      <mat-label>Student Name</mat-label>
+      <input matInput placeholder="Enter student name" 
+            [(ngModel)]="student.studentName" name= "studentName">
+    </mat-form-field>
+  <br>
+    <mat-form-field>
+        <mat-label>Course Name</mat-label>
+        <input matInput placeholder="Enter course name" 
+        [(ngModel)]="student.courseName" name= "courseName">  
+      </mat-form-field>
+      <br>
+      <mat-form-field>
+        <mat-label>Student Id</mat-label>
+        <input matInput placeholder="Enter student Id" 
+        [(ngModel)]="student.studentId" name= "studentId">  
+      </mat-form-field>
+      <br>
+      <mat-form-field>
+        <mat-label>Batch Id</mat-label>
+        <input matInput placeholder="Enter Batch Id" 
+        [(ngModel)]="student.batchId" name= "batchId">  
+      </mat-form-field>
+      <br>
+      <mat-form-field>
+        <mat-label>Round </mat-label>
+        <input matInput placeholder="Enter Round " 
+        [(ngModel)]="student.round" name= "round">  
+      </mat-form-field>
+
+ 
+
+
+  </mat-dialog-content>
+  <mat-dialog-actions>
+    <button mat-button type="submit">Save</button>
+    <button mat-button mat-dialog-close type="button">Close</button>
+  </mat-dialog-actions>
+</form>
